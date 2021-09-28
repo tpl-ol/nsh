@@ -1,0 +1,46 @@
+{
+  "name": "@tpl-ol/nsh",
+  "version": "0.1.0-a0",
+  "description": "Cross platform shell for npm scripts.",
+  "license": "GPL-3.0-or-later",
+  "keywords": [
+    "shell",
+    "npm-scripts"
+  ],
+  "author": "sceext",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpl-ol/nsh.git"
+  },
+  "homepage": "https://github.com/tpl-ol/nsh#readme",
+  "bugs": {
+    "url": "https://github.com/tpl-ol/nsh/issues"
+  },
+  "scripts": {
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
+    "build": "npm run fmt:check && npm run build:ts",
+    "build:ts": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "/lib",
+    "/bin",
+    "/doc"
+  ],
+  "bin": {
+    "nsh": "./bin/nsh.js",
+    "ns": "./bin/ns.js",
+    "壳": "./bin/nsh.js",
+    "壳依": "./bin/ns.js"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.1",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=16.0",
+    "npm": ">=7.0"
+  }
+}
