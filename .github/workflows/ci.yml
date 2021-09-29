@@ -6,7 +6,7 @@ env:
   PACK_FILENAME: tpl-ol-nsh-0.1.0-a0.tgz
 
 jobs:
-  build_linux:
+  node_linux:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
@@ -26,9 +26,9 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ env.PACK_FILENAME }}
-          path: ./*.tgz
+          path: ./${{ env.PACK_FILENAME }}
 
-  build_win:
+  node_win:
     runs-on: windows-latest
     timeout-minutes: 5
     steps:
