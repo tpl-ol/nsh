@@ -1,10 +1,13 @@
 name: CI
 on: [push, pull_request]
+
 env:
   PACK_FILENAME: tpl-ol-nsh-0.1.0-a0.tgz
+
 jobs:
   build_linux:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -16,8 +19,10 @@ jobs:
       - run: npm pack
       - run: npm install --no-save $PACK_FILENAME
       - run: npm test
+
   build_win:
     runs-on: windows-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -25,6 +30,10 @@ jobs:
           node-version: "16"
           cache: "npm"
       - run: npm ci
+
+      # 修复 git checkout 文件格式 (忽略 prettier 检查)
+      - run: npm run fmt
+
       - run: npm run build
       - run: npm pack
       - run: npm install --no-save %PACK_FILENAME%
