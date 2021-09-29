@@ -25,7 +25,7 @@ jobs:
       # 保存 npm pack
       - uses: actions/upload-artifact@v2
         with:
-          path: /*.tgz
+          path: ./*.tgz
 
   build_win:
     runs-on: windows-latest
