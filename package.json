@@ -21,7 +21,9 @@
     "fmt:check": "prettier --check .",
     "build": "npm run fmt:check && npm run build:ts",
     "build:ts": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:version && npm run test:ns",
+    "test:version": "壳 --版本",
+    "test:ns": "壳依 test:version TODO"
   },
   "files": [
     "/lib",

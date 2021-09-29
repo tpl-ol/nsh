@@ -1,0 +1,31 @@
+name: CI
+on: [push, pull_request]
+env:
+  PACK_FILENAME: tpl-ol-nsh-0.1.0-a0.tgz
+jobs:
+  build_linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      - run: npm pack
+      - run: npm install --no-save $PACK_FILENAME
+      - run: npm test
+  build_win:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      - run: npm pack
+      - run: npm install --no-save %PACK_FILENAME%
+      - run: npm test
