@@ -2,6 +2,7 @@ name: CI
 on: [push, pull_request]
 
 env:
+  # 用于安装自己并测试
   PACK_FILENAME: tpl-ol-nsh-0.1.0-a0.tgz
 
 jobs:
@@ -15,10 +16,16 @@ jobs:
           node-version: "16"
           cache: "npm"
       - run: npm ci
+
       - run: npm run build
       - run: npm pack
       - run: npm install --no-save $PACK_FILENAME
       - run: npm test
+
+      # 保存 npm pack
+      - uses: actions/upload-artifact@v2
+        with:
+          path: /*.tgz
 
   build_win:
     runs-on: windows-latest
