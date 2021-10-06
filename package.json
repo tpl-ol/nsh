@@ -21,9 +21,9 @@
     "fmt:check": "prettier --check .",
     "build": "npm run fmt:check && npm run build:ts",
     "build:ts": "tsc",
-    "test": "npm run test:version && npm run test:ns",
+    "test": "npm run test:mocha",
     "test:version": "壳 --版本",
-    "test:ns": "壳依 test:version TODO"
+    "test:mocha": "mocha"
   },
   "files": [
     "/lib",
@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.10.1",
+    "mocha": "^9.1.2",
     "prettier": "^2.4.1",
     "typescript": "^4.4.3"
   },
