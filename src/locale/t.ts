@@ -24,6 +24,8 @@ export interface 区域接口 {
 // 各种错误信息的集合
 export interface 错误信息 {
   未知命令行参数(参数: Array<string>): string;
+  未知命令(参数: Array<string>): string;
   执行命令错误(参数: Array<string>, 码?: number): string;
   无效退出码(参数: Array<string>): string;
+  读文件(名: string): string;
 }

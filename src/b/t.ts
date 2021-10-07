@@ -14,4 +14,7 @@ export interface B {
 
   // 执行外部命令, 返回进程退出码
   运行(参: Array<string>): Promise<number>;
+
+  // 读取一个文本文件 (utf-8 编码)
+  读文件(名: string): Promise<string>;
 }

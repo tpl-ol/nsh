@@ -1,7 +1,6 @@
 import { 区域接口 } from "../t";
 import { 版本号 } from "../../config";
 import 取错误信息 from "./err";
-import { isFloat32Array } from "util/types";
 
 const 命令翻译表: Record<string, string> = {
   "--version": "--版本",
