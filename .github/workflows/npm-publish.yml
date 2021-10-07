@@ -5,7 +5,7 @@ on:
 
 env:
   # npm pack
-  PACK_FILENAME: tpl-ol-nsh-0.1.0-a1.tgz
+  PACK_FILENAME: tpl-ol-nsh-0.1.0-a2.tgz
 
 jobs:
   test:

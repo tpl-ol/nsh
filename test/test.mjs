@@ -1,7 +1,7 @@
 import { 描述, 项, 运行, 成功运行, 应该, 应该相等 } from "./util.mjs";
 
 // 用于测试版本命令
-const 版本号 = "0.1.0-a1";
+const 版本号 = "0.1.0-a2";
 
 描述("测试工具自测", () => {
   项("运行 node --version", async () => {
@@ -80,6 +80,17 @@ const 版本号 = "0.1.0-a1";
     });
     项("exit", async () => {
       await 成功运行(["nsh", "exit"]);
+    });
+  });
+
+  描述("执行", () => {
+    项("壳 执行 壳 --版本", async () => {
+      const 输出 = await 成功运行(["壳", "执行", "壳", "--版本"]);
+      应该相等(输出.trim(), `壳 版本 ${版本号}`);
+    });
+    项("nsh exec node --version", async () => {
+      const 输出 = await 成功运行(["nsh", "exec", "node", "--version"]);
+      应该相等(输出.trim(), process.version);
     });
   });
 });

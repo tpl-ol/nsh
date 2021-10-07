@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 env:
   # 用于安装自己并测试
-  PACK_FILENAME: tpl-ol-nsh-0.1.0-a1.tgz
+  PACK_FILENAME: tpl-ol-nsh-0.1.0-a2.tgz
 
 jobs:
   node_linux:

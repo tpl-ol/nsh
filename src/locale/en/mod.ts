@@ -6,19 +6,20 @@ import { isFloat32Array } from "util/types";
 const 命令翻译表: Record<string, string> = {
   "--version": "--版本",
   "--help": "--帮助",
+  "--sh": "--壳",
   dep: "依赖",
   echo: "回显",
   exit: "退出",
+  exec: "执行",
 };
 
 const 帮助信息 = `\
 Usage: nsh --version
        nsh --help
+       nsh --sh {FILE}
        ns ...
 
-  TODO
-
-<https://github.com/tpl-ol/nsh>`;
+More document please see <https://github.com/tpl-ol/nsh>`;
 
 // en 实现
 function 取区域(): 区域接口 {

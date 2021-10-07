@@ -5,11 +5,10 @@ import 取错误信息 from "./err";
 const 帮助信息 = `\
 用法: 壳 --版本
       壳 --帮助
+      壳 --壳 {文件}
       壳依 ...
 
-  TODO
-
-<https://github.com/tpl-ol/nsh>`;
+更多文档请见 <https://github.com/tpl-ol/nsh>`;
 
 // zh_CN 实现
 function 取区域(): 区域接口 {

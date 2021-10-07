@@ -1,6 +1,6 @@
 {
   "name": "@tpl-ol/nsh",
-  "version": "0.1.0-a1",
+  "version": "0.1.0-a2",
   "description": "Cross platform shell for npm scripts.",
   "license": "GPL-3.0-or-later",
   "keywords": [
