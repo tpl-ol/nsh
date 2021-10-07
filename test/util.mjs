@@ -71,3 +71,11 @@ export async function 运行(参数) {
     错误: 标准错误.结束(),
   };
 }
+
+// 运行, 退出码应为 0, 返回标注输出, 不管标准错误输出
+export async function 成功运行(参数) {
+  const 结果 = await 运行(参数);
+  应该相等(结果.退出码, 0);
+
+  return 结果.输出;
+}

@@ -1,6 +1,6 @@
 {
   "name": "@tpl-ol/nsh",
-  "version": "0.1.0-a0",
+  "version": "0.1.0-a1",
   "description": "Cross platform shell for npm scripts.",
   "license": "GPL-3.0-or-later",
   "keywords": [
@@ -21,8 +21,9 @@
     "fmt:check": "prettier --check .",
     "build": "npm run fmt:check && npm run build:ts",
     "build:ts": "tsc",
-    "test": "npm run test:mocha",
+    "test": "npm run test:mocha && npm run test:壳依",
     "test:version": "壳 --版本",
+    "test:壳依": "壳依 test:version",
     "test:mocha": "mocha"
   },
   "files": [
@@ -31,10 +32,10 @@
     "/doc"
   ],
   "bin": {
-    "nsh": "./bin/nsh.js",
-    "ns": "./bin/ns.js",
-    "壳": "./bin/nsh.js",
-    "壳依": "./bin/ns.js"
+    "nsh": "./bin/nsh_en.js",
+    "ns": "./bin/ns_en.js",
+    "壳": "./bin/nsh_zh_CN.js",
+    "壳依": "./bin/ns_zh_CN.js"
   },
   "devDependencies": {
     "@types/node": "^16.10.1",

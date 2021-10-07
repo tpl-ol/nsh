@@ -1,10 +1,3 @@
-// TODO
+import { 入口壳 } from "./mod";
 
-async function 主() {
-  // TODO
-  console.log("nsh 测试");
-}
-
-主();
-
-export {};
+入口壳();
