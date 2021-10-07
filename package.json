@@ -24,7 +24,7 @@
     "test": "npm run test:mocha && npm run test:壳依",
     "test:version": "壳 --版本",
     "test:壳依": "壳依 test:version",
-    "test:mocha": "mocha"
+    "test:mocha": "mocha --timeout 24000"
   },
   "files": [
     "/lib",
