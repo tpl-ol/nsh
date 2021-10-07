@@ -10,6 +10,10 @@ const 帮助信息 = `\
 
 更多文档请见 <https://github.com/tpl-ol/nsh>`;
 
+const 欢迎信息 = `\
+壳 (nsh) 版本 ${版本号}
+  GPLv3 许可证, 文档请见 <https://github.com/tpl-ol/nsh>`;
+
 // zh_CN 实现
 function 取区域(): 区域接口 {
   return {
@@ -26,6 +30,10 @@ function 取区域(): 区域接口 {
     },
 
     错: 取错误信息(),
+
+    欢迎(): string {
+      return 欢迎信息;
+    },
   };
 }
 

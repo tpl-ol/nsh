@@ -17,4 +17,12 @@ export interface B {
 
   // 读取一个文本文件 (utf-8 编码)
   读文件(名: string): Promise<string>;
+
+  // 用于交互模式
+  初始化交互控制器(参数: Array<string>): 交互控制器;
+}
+
+export interface 交互控制器 {
+  读命令(): Promise<string | undefined>;
+  关闭(): void;
 }

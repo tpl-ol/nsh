@@ -1,6 +1,7 @@
 import { B } from "../t";
 import 取区域 from "./locale";
 import { 运行 } from "./run";
+import 初始化交互控制器 from "./repl";
 import { 读文件 } from "./file";
 
 function 命令行参数(): Array<string> {
@@ -18,7 +19,10 @@ function 取接口(): B {
     命令行参数,
     取区域,
     运行,
+
     读文件,
+
+    初始化交互控制器,
   };
 }
 

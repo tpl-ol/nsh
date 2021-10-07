@@ -3,6 +3,7 @@ import type { 命令 } from "../t";
 import 版本_ from "./_version";
 import 帮助_ from "./_help";
 import 壳_ from "./_sh";
+import 交互_ from "./_repl";
 import 依赖 from "./dep";
 import 回显 from "./echo";
 import 退出 from "./exit";
@@ -21,6 +22,7 @@ const 命令表2: Record<string, 命令> = {
   "--版本": 版本_,
   "--帮助": 帮助_,
   "--壳": 壳_,
+  "--交互": 交互_,
 };
 
 function 取命令(名: string): 命令 | undefined {

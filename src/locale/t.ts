@@ -19,6 +19,9 @@ export interface 区域接口 {
   翻译命令(原始: string): string;
 
   错: 错误信息;
+
+  // 交互模式的欢迎信息
+  欢迎(): string;
 }
 
 // 各种错误信息的集合

@@ -7,6 +7,11 @@ async function 主(b: B, 参数: Array<string>) {
   const 区 = 取区域();
   // TODO 改进命令行解析
 
+  // 参数为空即为交互式
+  if (参数.length < 1) {
+    参数 = ["--交互"];
+  }
+
   // 第一个参数为命令名称
   const 名 = 区.翻译命令(参数[0]);
   const 命令 = 取命令(名);
