@@ -1,0 +1,49 @@
+name: NPM 发布
+on:
+  release:
+    types: [created]
+
+env:
+  # npm pack
+  PACK_FILENAME: tpl-ol-nsh-0.1.0-a1.tgz
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "npm"
+      - run: npm ci
+
+      - run: npm run build
+      - run: npm pack
+      - run: npm install --no-save ${{ env.PACK_FILENAME }}
+      - run: npm test
+
+      # 保存 npm pack
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.PACK_FILENAME }}
+          path: ./${{ env.PACK_FILENAME }}
+
+  publish-npm:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+
+      - run: npm run build
+
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

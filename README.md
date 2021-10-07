@@ -2,6 +2,11 @@
 
 <https://github.com/tpl-ol/nsh>
 
+[![github CI](https://github.com/tpl-ol/nsh/actions/workflows/ci.yml/badge.svg)](https://github.com/tpl-ol/nsh/actions)
+[![npm](https://flat.badgen.net/npm/v/@tpl-ol/nsh)](https://www.npmjs.com/package/@tpl-ol/nsh)
+![LICENSE](https://flat.badgen.net/npm/license/@tpl-ol/nsh)
+![dep](https://flat.badgen.net/npm/dependents/@tpl-ol/nsh)
+
 跨平台命令行外壳 (shell), 基于 [node.js](https://nodejs.org/) <br />
 Cross platform shell for npm scripts.
 
