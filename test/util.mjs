@@ -2,6 +2,7 @@
 import assert from "assert/strict";
 import { StringDecoder } from "string_decoder";
 import { spawn } from "child_process";
+import path from "path";
 
 // mocha
 export function 描述(名, 内容) {
@@ -78,4 +79,12 @@ export async function 成功运行(参数) {
   应该相等(结果.退出码, 0);
 
   return 结果.输出;
+}
+
+export function 工作目录() {
+  return path.resolve(process.cwd());
+}
+
+export function 拼接路径(路径) {
+  return path.join(...路径);
 }

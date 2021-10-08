@@ -11,6 +11,9 @@ const 命令翻译表: Record<string, string> = {
   echo: "回显",
   exit: "退出",
   exec: "执行",
+  pwd: "路径",
+  cd: "去",
+  ls: "列出",
 };
 
 const 帮助信息 = `\

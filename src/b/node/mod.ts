@@ -2,13 +2,14 @@ import { B } from "../t";
 import 取区域 from "./locale";
 import { 运行 } from "./run";
 import 初始化交互控制器 from "./repl";
-import { 读文件 } from "./file";
+import { 读文件, 读目录 } from "./file";
+import { 取工作目录, 设工作目录, 取主目录, 绝对路径, 拼接路径 } from "./path";
 
-function 命令行参数(): Array<string> {
+async function 命令行参数(): Promise<Array<string>> {
   return process.argv.slice(1);
 }
 
-function 退出(码: number): void {
+async function 退出(码: number): Promise<void> {
   process.exit(码);
 }
 
@@ -21,8 +22,15 @@ function 取接口(): B {
     运行,
 
     读文件,
+    读目录,
 
     初始化交互控制器,
+
+    取工作目录,
+    设工作目录,
+    取主目录,
+    绝对路径,
+    拼接路径,
   };
 }
 

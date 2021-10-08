@@ -1,7 +1,7 @@
 import path from "path";
 import { 区域 } from "../../locale/t";
 
-export default function 取区域(参: string): 区域 {
+export default async function 取区域(参: string): Promise<区域> {
   let 文件名 = path.basename(参);
   // 如果有后缀, 去除
   if (文件名.includes(".")) {

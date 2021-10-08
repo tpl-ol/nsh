@@ -1,4 +1,14 @@
-import { 描述, 项, 运行, 成功运行, 应该, 应该相等 } from "./util.mjs";
+// node.js
+import {
+  描述,
+  项,
+  运行,
+  成功运行,
+  应该,
+  应该相等,
+  工作目录,
+  拼接路径,
+} from "./util.mjs";
 
 // 用于测试版本命令
 const 版本号 = "0.1.0-a2";
@@ -91,6 +101,20 @@ const 版本号 = "0.1.0-a2";
     项("nsh exec node --version", async () => {
       const 输出 = await 成功运行(["nsh", "exec", "node", "--version"]);
       应该相等(输出.trim(), process.version);
+    });
+  });
+
+  描述("测试集1: 路径, 去, 列出", () => {
+    项("壳 --壳 test/sh/测试集1.sh", async () => {
+      const 路径 = 工作目录();
+      const 输出 = await 成功运行(["壳", "--壳", "test/sh/测试集1.sh"]);
+      应该相等(
+        输出.trim(),
+        `${路径}\n${拼接路径([路径, "test/sh/测试列出"])}\n1\n2\n${拼接路径([
+          路径,
+          "test/sh",
+        ])}\n1\n2\n${路径}`
+      );
     });
   });
 });

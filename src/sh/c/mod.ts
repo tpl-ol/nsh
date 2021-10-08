@@ -8,6 +8,9 @@ import 依赖 from "./dep";
 import 回显 from "./echo";
 import 退出 from "./exit";
 import 执行 from "./exec";
+import 路径 from "./pwd";
+import 去 from "./cd";
+import 列出 from "./ls";
 
 // 脚本及命令行均可执行的通用命令
 const 命令表: Record<string, 命令> = {
@@ -15,6 +18,9 @@ const 命令表: Record<string, 命令> = {
   回显,
   退出,
   执行,
+  路径,
+  去,
+  列出,
 };
 
 // 只有在命令行可以执行的特殊命令

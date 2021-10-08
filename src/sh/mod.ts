@@ -19,7 +19,7 @@ async function 主(b: B, 参数: Array<string>) {
     try {
       const 码 = await 命令(b, 参数.slice(1));
       if (码 != 0) {
-        b.退出(码);
+        await b.退出(码);
       }
     } catch (e) {
       console.error(`错误! 执行命令: ${参数.join(" ")}`);
@@ -28,7 +28,7 @@ async function 主(b: B, 参数: Array<string>) {
     }
   } else {
     console.error(区.错.未知命令行参数(参数));
-    b.退出(1);
+    await b.退出(1);
   }
 }
 

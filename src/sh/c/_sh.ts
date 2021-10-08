@@ -54,7 +54,7 @@ async function 壳(b: B, 参数: Array<string>): Promise<number> {
   const 区 = 取区域();
 
   if (参数.length != 1) {
-    const 命令 = b.命令行参数();
+    const 命令 = await b.命令行参数();
     console.error(区.错.未知命令行参数(命令));
     return 1;
   }

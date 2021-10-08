@@ -4,7 +4,7 @@ import 取区域 from "../../locale/mod";
 import 取命令 from "./mod";
 
 async function 交互(b: B, 参数: Array<string>): Promise<number> {
-  const 控制器 = b.初始化交互控制器(参数);
+  const 控制器 = await b.初始化交互控制器(参数);
 
   const 区 = 取区域();
   console.log(区.欢迎());

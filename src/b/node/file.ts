@@ -11,3 +11,7 @@ export async function 读文件(名: string): Promise<string> {
     await 文件?.close();
   }
 }
+
+export async function 读目录(路径: string): Promise<Array<string>> {
+  return await fs.readdir(路径);
+}

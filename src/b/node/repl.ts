@@ -2,7 +2,7 @@ import readline from "readline";
 
 import { 交互控制器 } from "../t";
 
-function 初始化交互控制器(): 交互控制器 {
+async function 初始化交互控制器(): Promise<交互控制器> {
   const 读行 = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -30,7 +30,7 @@ function 初始化交互控制器(): 交互控制器 {
   return {
     读命令,
 
-    关闭() {
+    async 关闭() {
       读行.close();
     },
   };
