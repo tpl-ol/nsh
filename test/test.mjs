@@ -11,7 +11,7 @@ import {
 } from "./util.mjs";
 
 // 用于测试版本命令
-const 版本号 = "0.1.0-a2";
+const 版本号 = "0.1.0-a3";
 
 描述("测试工具自测", () => {
   项("运行 node --version", async () => {
