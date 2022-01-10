@@ -1,3 +1,5 @@
+import { 命令参数配置 } from "../sh/a/t";
+
 // 支持的区域 (语言列表)
 export enum 区域 {
   // 未知
@@ -17,6 +19,7 @@ export interface 区域接口 {
   帮助(): string;
 
   翻译命令(原始: string): string;
+  翻译命令参数(命令: string, 原始: 命令参数配置): 命令参数配置;
 
   错: 错误信息;
 

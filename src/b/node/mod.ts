@@ -2,7 +2,7 @@ import { B } from "../t";
 import 取区域 from "./locale";
 import { 运行 } from "./run";
 import 初始化交互控制器 from "./repl";
-import { 读文件, 读目录 } from "./file";
+import { 读文件, 读目录, 建目录, 删目录, 复制, 删除, 递归删除空 } from "./file";
 import { 取工作目录, 设工作目录, 取主目录, 绝对路径, 拼接路径 } from "./path";
 
 async function 命令行参数(): Promise<Array<string>> {
@@ -31,6 +31,12 @@ function 取接口(): B {
     取主目录,
     绝对路径,
     拼接路径,
+
+    建目录,
+    删目录,
+    复制,
+    删除,
+    递归删除空,
   };
 }
 

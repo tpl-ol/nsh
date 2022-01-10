@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 env:
   # 用于安装自己并测试
-  PACK_FILENAME: tpl-ol-nsh-0.1.0-a2.tgz
+  PACK_FILENAME: tpl-ol-nsh-0.1.0-a3.tgz
 
 jobs:
   node_linux:
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: "17"
           cache: "npm"
       - run: npm ci
 
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          node-version: "17"
           cache: "npm"
       - run: npm ci
 

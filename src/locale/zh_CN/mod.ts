@@ -1,4 +1,5 @@
 import { 区域接口 } from "../t";
+import { 命令参数配置 } from "../../sh/a/t";
 import { 版本号 } from "../../config";
 import 取错误信息 from "./err";
 
@@ -25,6 +26,10 @@ function 取区域(): 区域接口 {
     },
 
     翻译命令(原始: string): string {
+      // 无需翻译
+      return 原始;
+    },
+    翻译命令参数(命令: string, 原始: 命令参数配置): 命令参数配置 {
       // 无需翻译
       return 原始;
     },

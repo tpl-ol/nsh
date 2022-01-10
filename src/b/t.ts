@@ -31,6 +31,18 @@ export interface B {
   // 解析路径
   绝对路径(路径: string): Promise<string>;
   拼接路径(路径: Array<string>): Promise<string>;
+
+  // 文件操作
+  建目录(路径: Array<string>, 确: boolean): Promise<void>;
+  删目录(路径: Array<string>): Promise<void>;
+  复制(从路径: Array<string>, 至路径: string, 递归: boolean): Promise<void>;
+  删除(路径: Array<string>, 递归: boolean): Promise<void>;
+  递归删除空(
+    路径: Array<string>,
+    目录: boolean,
+    文件: boolean,
+    显示: boolean
+  ): Promise<void>;
 }
 
 export interface 交互控制器 {
